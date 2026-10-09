@@ -1,0 +1,1111 @@
+/* =========================================================
+   ALAGHNA TECHNOLOGIES
+   ABOUT PAGE
+   ========================================================= */
+
+.about-page {
+  --bg: #03030a;
+  --bg-soft: #070711;
+
+  --text: #eeeeF5;
+  --muted: rgba(238, 238, 245, 0.58);
+  --soft: rgba(238, 238, 245, 0.34);
+
+  --pink: #ff1493;
+  --pink-light: #ff4db8;
+  --purple: #a855f7;
+  --blue: #38bdf8;
+  --cyan: #22d3ee;
+
+  min-height: 100vh;
+
+  background: var(--bg);
+
+  color: var(--text);
+
+  overflow: hidden;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+.about-page *,
+.about-page *::before,
+.about-page *::after {
+  box-sizing: border-box;
+}
+
+.about-page a {
+  color: inherit;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.about-hero {
+  position: relative;
+
+  min-height: 78vh;
+
+  padding:
+    170px
+    clamp(6%, 8vw, 10%)
+    120px;
+
+  display: flex;
+  align-items: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 15% 45%,
+      rgba(255, 20, 147, 0.09),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 85% 60%,
+      rgba(56, 189, 248, 0.06),
+      transparent 30%
+    );
+}
+
+.about-hero::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background-image:
+    linear-gradient(
+      rgba(255, 255, 255, 0.018) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0.018) 1px,
+      transparent 1px
+    );
+
+  background-size: 90px 90px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      black,
+      transparent 90%
+    );
+}
+
+.about-hero-content {
+  position: relative;
+
+  width: min(1100px, 100%);
+
+  z-index: 2;
+}
+
+.about-eyebrow {
+  display: flex;
+
+  align-items: center;
+
+  gap: 16px;
+
+  margin-bottom: 32px;
+
+  color: rgba(238, 238, 245, 0.52);
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 13px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.22em;
+}
+
+.about-eyebrow-line {
+  width: 55px;
+  height: 1px;
+
+  background: var(--pink);
+
+  box-shadow:
+    0 0 15px rgba(255, 20, 147, 0.7);
+}
+
+.about-hero h1 {
+  margin: 0;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: clamp(
+    65px,
+    9vw,
+    145px
+  );
+
+  line-height: 0.88;
+
+  letter-spacing: -0.065em;
+
+  font-weight: 700;
+}
+
+.about-hero h1 span {
+  display: block;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--pink),
+      var(--purple),
+      var(--blue),
+      var(--cyan),
+      var(--pink)
+    );
+
+  background-size: 300% 100%;
+
+  animation: aboutGradientMove 7s ease infinite;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+@keyframes aboutGradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.about-hero-content p {
+  max-width: 650px;
+
+  margin: 42px 0 0;
+
+  color: var(--muted);
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 18px;
+
+  line-height: 1.8;
+}
+
+.about-hero-index {
+  position: absolute;
+
+  right: 7%;
+  bottom: 55px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-end;
+
+  gap: 7px;
+
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.about-hero-index span:first-child {
+  color: rgba(255, 20, 147, 0.7);
+
+  font-size: 54px;
+
+  font-weight: 700;
+
+  letter-spacing: -0.04em;
+}
+
+.about-hero-index span:last-child {
+  color: rgba(238, 238, 245, 0.28);
+
+  font-size: 10px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.22em;
+}
+
+
+/* =========================================================
+   COMPANY STORY / MISSION / VISION
+   ========================================================= */
+
+.about-information {
+  width: min(1250px, 86%);
+
+  margin: 0 auto;
+
+  padding: 125px 0;
+
+  position: relative;
+}
+
+
+/* -----------------------------------------
+   TWO COLUMN HEADING
+   ----------------------------------------- */
+
+.about-section-row {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  align-items: center;
+
+  column-gap: 80px;
+
+  margin-bottom: 32px;
+}
+
+
+/* -----------------------------------------
+   LEFT HEADING
+   ----------------------------------------- */
+
+.about-section-heading {
+  margin: 0;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: clamp(
+    42px,
+    5vw,
+    76px
+  );
+
+  line-height: 0.95;
+
+  letter-spacing: -0.055em;
+
+  font-weight: 700;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--pink),
+      var(--purple),
+      var(--blue),
+      var(--cyan),
+      var(--pink)
+    );
+
+  background-size: 300% 100%;
+
+  animation:
+    aboutGradientMove 7s ease infinite;
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+
+/* -----------------------------------------
+   RIGHT SUBHEADING
+   ----------------------------------------- */
+
+.about-section-subheading {
+  margin: 0;
+
+  color: #f4f4f8;
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: clamp(
+    22px,
+    2.2vw,
+    32px
+  );
+
+  font-weight: 600;
+
+  letter-spacing: -0.015em;
+
+  line-height: 1.2;
+}
+
+
+/* -----------------------------------------
+   DESCRIPTION
+   ----------------------------------------- */
+
+.about-section-description {
+  width: 100%;
+
+  max-width: 1080px;
+
+  padding-left: calc(
+    50% + 40px
+  );
+}
+
+.about-section-description p {
+  margin: 0 0 18px;
+
+  color: var(--muted);
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 15px;
+
+  line-height: 1.85;
+}
+
+.about-section-description p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   VISUAL SPACING BETWEEN INFORMATION SECTIONS
+   ========================================================= */
+
+.about-information + .about-information {
+  padding-top: 95px;
+}
+
+
+/* =========================================================
+   WHAT MAKES ALAGHNA DIFFERENT
+   ========================================================= */
+
+.about-different {
+  padding:
+    135px
+    clamp(6%, 8vw, 10%);
+
+  background: var(--bg-soft);
+}
+
+.about-different-heading {
+  margin-bottom: 35px;
+}
+
+.about-different-heading h2 {
+  margin: 0;
+
+  max-width: 900px;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: clamp(
+    48px,
+    6vw,
+    92px
+  );
+
+  line-height: 0.9;
+
+  letter-spacing: -0.055em;
+}
+
+.about-different-heading h2 span {
+  display: block;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--pink),
+      var(--purple),
+      var(--blue)
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+.about-different-intro {
+  max-width: 650px;
+
+  margin:
+    0 0 70px
+    clamp(48px, 6vw, 92px);
+
+  color: var(--muted);
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 18px;
+
+  line-height: 1.7;
+}
+
+.different-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+.difference-card {
+  min-height: 310px;
+
+  padding: 30px;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.025),
+      rgba(255, 255, 255, 0.005)
+    );
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    background 0.35s ease;
+}
+
+.difference-card:hover {
+  transform: translateY(-7px);
+
+  border-color:
+    rgba(255, 20, 147, 0.35);
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 20, 147, 0.05),
+      rgba(168, 85, 247, 0.015)
+    );
+}
+
+.difference-card > span {
+  color: var(--pink);
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+}
+
+.difference-card h3 {
+  margin: 55px 0 16px;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 18px;
+
+  line-height: 1.2;
+
+  letter-spacing: 0.025em;
+}
+
+.difference-card p {
+  max-width: 340px;
+
+  margin: 0;
+
+  color: var(--muted);
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 13px;
+
+  line-height: 1.75;
+}
+
+
+/* =========================================================
+   FINAL CTA
+   ========================================================= */
+
+.about-final {
+  position: relative;
+
+  padding:
+    165px
+    clamp(6%, 8vw, 10%);
+
+  text-align: center;
+
+  overflow: hidden;
+}
+
+.about-final::before {
+  content: "";
+
+  position: absolute;
+
+  width: 550px;
+  height: 550px;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50%;
+
+  background: var(--pink);
+
+  filter: blur(190px);
+
+  opacity: 0.07;
+
+  pointer-events: none;
+}
+
+.about-final-content {
+  position: relative;
+
+  max-width: 1000px;
+
+  margin: 0 auto;
+}
+
+.about-final-content > span {
+  color: var(--pink);
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.25em;
+}
+
+.about-final h2 {
+  margin: 25px 0 30px;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: clamp(
+    55px,
+    8vw,
+    120px
+  );
+
+  line-height: 0.88;
+
+  letter-spacing: -0.06em;
+}
+
+.about-final h2 strong {
+  display: block;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--pink),
+      var(--purple),
+      var(--blue)
+    );
+
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  color: transparent;
+}
+
+.about-final-content p {
+  max-width: 580px;
+
+  margin: 0 auto 40px;
+
+  color: var(--muted);
+
+  font-family: "Manrope", sans-serif;
+
+  font-size: 16px;
+
+  line-height: 1.7;
+}
+
+.about-final-button {
+  display: inline-flex;
+
+  align-items: center;
+
+  gap: 22px;
+
+  padding: 17px 26px;
+
+  border: 1px solid rgba(255, 20, 147, 0.55);
+
+  background: rgba(255, 20, 147, 0.055);
+
+  color: var(--text);
+
+  text-decoration: none;
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.12em;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease,
+    border-color 0.3s ease;
+}
+
+.about-final-button:hover {
+  transform: translateY(-4px);
+
+  background: var(--pink);
+
+  border-color: var(--pink);
+}
+
+.about-final-button span:last-child {
+  font-size: 19px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.about-footer {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    auto
+    1fr;
+
+  align-items: center;
+
+  gap: 30px;
+
+  padding:
+    28px
+    clamp(6%, 8vw, 10%);
+
+  color: rgba(238, 238, 245, 0.3);
+
+  font-family: "Space Grotesk", sans-serif;
+
+  font-size: 9px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.13em;
+}
+
+.about-footer span:nth-child(2) {
+  text-align: center;
+}
+
+.about-footer span:last-child {
+  text-align: right;
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .about-section-row {
+    column-gap: 45px;
+  }
+
+  .about-section-description {
+    padding-left: 50%;
+  }
+
+  .different-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .about-hero {
+    min-height: 70vh;
+
+    padding:
+      125px
+      7%
+      90px;
+  }
+
+  .about-hero h1 {
+    font-size: clamp(
+      55px,
+      16vw,
+      90px
+    );
+  }
+
+  .about-hero-content p {
+    font-size: 15px;
+  }
+
+  .about-hero-index {
+    display: none;
+  }
+
+
+  /* -----------------------------------------
+     STORY / MISSION / VISION
+     ----------------------------------------- */
+
+  .about-information {
+    width: 86%;
+
+    padding:
+      90px 0;
+  }
+
+  .about-information + .about-information {
+    padding-top: 70px;
+  }
+
+  .about-section-row {
+    grid-template-columns: 1fr;
+
+    row-gap: 15px;
+
+    margin-bottom: 25px;
+  }
+
+  .about-section-heading {
+    font-size: clamp(
+      43px,
+      13vw,
+      70px
+    );
+  }
+
+  .about-section-subheading {
+    font-size: 21px;
+  }
+
+  .about-section-description {
+    padding-left: 0;
+
+    max-width: 100%;
+  }
+
+  .about-section-description p {
+    font-size: 14px;
+
+    line-height: 1.8;
+  }
+
+
+  /* -----------------------------------------
+     DIFFERENT
+     ----------------------------------------- */
+
+  .about-different {
+    padding:
+      95px 7%;
+  }
+
+  .about-different-heading h2 {
+    font-size: clamp(
+      45px,
+      13vw,
+      75px
+    );
+  }
+
+  .about-different-intro {
+    margin-left: 0;
+
+    margin-bottom: 45px;
+  }
+
+  .different-grid {
+    grid-template-columns: 1fr;
+
+    gap: 15px;
+  }
+
+  .difference-card {
+    min-height: 280px;
+  }
+
+
+  /* -----------------------------------------
+     CTA
+     ----------------------------------------- */
+
+  .about-final {
+    padding:
+      110px 7%;
+  }
+
+  .about-final h2 {
+    font-size: clamp(
+      52px,
+      15vw,
+      80px
+    );
+  }
+
+
+  /* -----------------------------------------
+     FOOTER
+     ----------------------------------------- */
+
+  .about-footer {
+    grid-template-columns: 1fr;
+
+    text-align: center;
+
+    gap: 14px;
+  }
+
+  .about-footer span:nth-child(2),
+  .about-footer span:last-child {
+    text-align: center;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 430px) {
+
+  .about-hero {
+    padding-top: 110px;
+  }
+
+  .about-eyebrow {
+    font-size: 9px;
+
+    letter-spacing: 0.15em;
+  }
+
+  .about-eyebrow-line {
+    width: 32px;
+  }
+
+  .about-section-heading {
+    font-size: 43px;
+  }
+
+  .about-section-subheading {
+    font-size: 19px;
+  }
+
+  .about-section-description p {
+    font-size: 14px;
+  }
+
+  .difference-card {
+    padding: 25px;
+  }
+
+}
+/* =========================================================
+   ADDITIONAL RESPONSIVE DIMENSION FIXES
+   MOBILE / SMALL SCREENS
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  .about-page {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  .about-hero {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .about-hero-content {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .about-hero h1 {
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  .about-hero-content p {
+    width: 100%;
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  .about-information {
+    width: 86%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .about-section-row {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .about-section-heading,
+  .about-section-subheading {
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  .about-section-description {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .about-section-description p {
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  .about-different {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .about-different-heading {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .about-different-heading h2 {
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  .about-different-intro {
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  .different-grid {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .difference-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .difference-card h3,
+  .difference-card p {
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  .about-final {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+  }
+
+  .about-final-content {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .about-final h2 {
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  .about-final-content p {
+    max-width: 100%;
+    overflow-wrap: break-word;
+  }
+
+  .about-final-button {
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .about-footer {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+}
+
+
+@media (max-width: 380px) {
+
+  .about-hero {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  .about-information {
+    width: 88%;
+  }
+
+  .about-different {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  .about-final {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  .difference-card {
+    padding: 22px;
+  }
+
+}

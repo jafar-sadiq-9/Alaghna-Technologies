@@ -1,0 +1,838 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+/* =========================================================
+   AMA SOFTWARE DEVELOPERS
+   GLOBAL CSS
+========================================================= */
+
+:root {
+  --bg: #03030a;
+  --bg-soft: #070711;
+  --bg-card: #0a0a13;
+
+  --pink: #ff1493;
+  --pink-light: #ff4db8;
+
+  --purple: #a855f7;
+  --purple-dark: #7c3aed;
+
+  --blue: #38bdf8;
+  --cyan: #22d3ee;
+
+  --gold: #f5c76a;
+
+  --white: #ffffff;
+  --text: #eeeeF5;
+  --muted: #a5a5b8;
+  --muted-dark: #737386;
+
+  --border: rgba(255, 255, 255, 0.1);
+  --border-soft: rgba(255, 255, 255, 0.07);
+}
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at 50% -20%,
+      rgba(124, 58, 237, 0.1),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 100% 30%,
+      rgba(56, 189, 248, 0.03),
+      transparent 28%
+    ),
+    var(--bg);
+
+  color: var(--white);
+
+  font-family:
+    "Manrope",
+    "Segoe UI",
+    sans-serif;
+
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+body,
+button,
+a,
+input,
+textarea,
+select {
+  font-family:
+    "Manrope",
+    "Segoe UI",
+    sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family:
+    "Space Grotesk",
+    "Manrope",
+    sans-serif;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  border: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+::selection {
+  background: rgba(255, 20, 147, 0.35);
+  color: white;
+}
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: #03030a;
+}
+
+::-webkit-scrollbar-thumb {
+  background:
+    linear-gradient(
+      #ff1493,
+      #8b5cf6
+    );
+
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background:
+    linear-gradient(
+      #ff4db8,
+      #a855f7
+    );
+}
+
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #a855f7 #03030a;
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+  position: fixed;
+  z-index: 1000;
+
+  top: 22px;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: min(
+    1420px,
+    calc(100% - 48px)
+  );
+
+  min-height: 76px;
+
+  padding:
+    12px
+    16px
+    12px
+    22px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 24px;
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.11);
+
+  border-radius: 20px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(12, 12, 24, 0.82),
+      rgba(6, 6, 15, 0.68)
+    );
+
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+
+  box-shadow:
+    0 20px 70px rgba(0, 0, 0, 0.28),
+    inset 0 1px rgba(255, 255, 255, 0.045);
+}
+
+.navbar::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  border-radius: inherit;
+
+  pointer-events: none;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(255, 20, 147, 0.05),
+      transparent 25%,
+      transparent 75%,
+      rgba(56, 189, 248, 0.04)
+    );
+}
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.brand {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+
+  gap: 13px;
+
+  flex-shrink: 0;
+}
+
+.brand-mark {
+  width: 47px;
+  height: 47px;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 13px;
+
+  color: #ffffff;
+
+  font-family:
+    "Space Grotesk",
+    sans-serif;
+
+  font-size: 19px;
+  font-weight: 800;
+
+  letter-spacing: -0.08em;
+
+  border:
+    1px solid
+    rgba(255, 20, 147, 0.28);
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 20, 147, 0.18),
+      rgba(168, 85, 247, 0.16)
+    );
+
+  box-shadow:
+    inset 0 0 22px rgba(255, 20, 147, 0.08),
+    0 0 35px rgba(255, 20, 147, 0.07);
+
+  transition:
+    transform 0.35s ease,
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+.brand:hover .brand-mark {
+  transform: translateY(-2px);
+
+  border-color:
+    rgba(255, 20, 147, 0.48);
+
+  box-shadow:
+    inset 0 0 25px rgba(255, 20, 147, 0.12),
+    0 0 42px rgba(255, 20, 147, 0.12);
+}
+
+.brand-copy {
+  display: flex;
+  flex-direction: column;
+
+  line-height: 1;
+}
+
+.brand-copy strong {
+  font-family:
+    "Space Grotesk",
+    sans-serif;
+
+  font-size: 18px;
+  font-weight: 800;
+
+  letter-spacing: -0.02em;
+}
+
+.brand-copy span {
+  margin-top: 5px;
+
+  color: #757588;
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: 0.16em;
+}
+
+/* =========================================================
+   NAVIGATION LINKS
+========================================================= */
+
+.nav-links {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 34px;
+
+  flex: 1;
+}
+
+.nav-link {
+  position: relative;
+
+  color: #a8a8b8;
+
+  font-size: 15px;
+  font-weight: 700;
+
+  letter-spacing: 0.01em;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.nav-link::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: -9px;
+
+  width: 0;
+  height: 2px;
+
+  transform: translateX(-50%);
+
+  border-radius: 10px;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ff1493,
+      #a855f7
+    );
+
+  box-shadow:
+    0 0 14px rgba(255, 20, 147, 0.45);
+
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: #ffffff;
+}
+
+.nav-link:hover {
+  transform: translateY(-1px);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 22px;
+}
+
+/* =========================================================
+   NAV CTA
+========================================================= */
+
+.nav-cta {
+  position: relative;
+  z-index: 2;
+
+  min-height: 48px;
+
+  padding: 0 18px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 16px;
+
+  border-radius: 12px;
+
+  color: #ffffff;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(255, 20, 147, 0.92),
+      rgba(139, 92, 246, 0.92)
+    );
+
+  font-size: 11px;
+  font-weight: 800;
+
+  letter-spacing: 0.12em;
+
+  box-shadow:
+    0 10px 32px rgba(255, 20, 147, 0.14);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.nav-cta:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 15px 40px rgba(255, 20, 147, 0.24);
+}
+
+.nav-arrow {
+  font-size: 18px;
+  line-height: 1;
+}
+
+/* =========================================================
+   ACCESSIBILITY / FOCUS
+========================================================= */
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline:
+    2px solid
+    rgba(255, 20, 147, 0.8);
+
+  outline-offset: 4px;
+}
+
+/* =========================================================
+   FORM NORMALIZATION
+========================================================= */
+
+input,
+textarea,
+select {
+  color: #ffffff;
+  background: transparent;
+  border: 0;
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #69697d;
+}
+
+/* =========================================================
+   UTILITY COLORS
+========================================================= */
+
+.neon-pink {
+  color: var(--pink);
+}
+
+.neon-purple {
+  color: var(--purple);
+}
+
+.neon-blue {
+  color: var(--blue);
+}
+
+.neon-gold {
+  color: var(--gold);
+}
+
+/* =========================================================
+   RESPONSIVE NAVBAR
+========================================================= */
+
+@media (max-width: 1200px) {
+  .navbar {
+    width:
+      min(
+        1420px,
+        calc(100% - 34px)
+      );
+  }
+
+  .nav-links {
+    gap: 21px;
+  }
+
+  .nav-link {
+    font-size: 14px;
+  }
+
+  .nav-cta {
+    padding: 0 14px;
+  }
+}
+
+@media (max-width: 950px) {
+  .navbar {
+    width: calc(100% - 28px);
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .nav-link {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 850px) {
+  .navbar {
+    top: 16px;
+
+    min-height: 70px;
+
+    padding:
+      10px
+      12px
+      10px
+      16px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .brand-copy span {
+    display: none;
+  }
+
+  .nav-cta {
+    min-height: 46px;
+    padding: 0 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    top: 12px;
+
+    width: calc(100% - 20px);
+
+    min-height: 66px;
+
+    padding:
+      9px
+      10px
+      9px
+      12px;
+
+    border-radius: 16px;
+  }
+
+  .brand {
+    gap: 10px;
+  }
+
+  .brand-mark {
+    width: 42px;
+    height: 42px;
+
+    font-size: 17px;
+  }
+
+  .brand-copy strong {
+    font-size: 16px;
+  }
+
+  .nav-cta {
+    min-height: 42px;
+
+    padding: 0 12px;
+
+    gap: 8px;
+
+    font-size: 9px;
+  }
+
+  .nav-arrow {
+    font-size: 15px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+/* =========================================================
+   MOBILE NAVIGATION
+========================================================= */
+
+.mobile-menu-button {
+  display: none;
+
+  width: 42px;
+  height: 42px;
+
+  padding: 0;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  background: rgba(255, 255, 255, 0.035);
+
+  align-items: center;
+  justify-content: center;
+
+  flex-direction: column;
+
+  gap: 5px;
+
+  cursor: pointer;
+
+  position: relative;
+  z-index: 1001;
+}
+
+.mobile-menu-button span {
+  display: block;
+
+  width: 19px;
+  height: 2px;
+
+  background: #fff;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease,
+    width 0.3s ease;
+}
+
+.mobile-menu-button.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.mobile-menu-button.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-button.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+.mobile-nav {
+  display: none;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 850px) {
+
+  .navbar {
+    position: fixed;
+    z-index: 1000;
+  }
+
+  .mobile-menu-button {
+    display: flex;
+  }
+
+  .mobile-nav {
+    position: absolute;
+
+    top: calc(100% + 10px);
+    left: 0;
+    right: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 12px;
+
+    background:
+      linear-gradient(
+        145deg,
+        rgba(10, 10, 19, 0.97),
+        rgba(5, 5, 12, 0.97)
+      );
+
+    border:
+      1px solid
+      rgba(255, 255, 255, 0.09);
+
+    box-shadow:
+      0 25px 60px
+      rgba(0, 0, 0, 0.45);
+
+    backdrop-filter: blur(20px);
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+
+    pointer-events: none;
+
+    transition:
+      opacity 0.3s ease,
+      transform 0.3s ease,
+      visibility 0.3s ease;
+  }
+
+  .mobile-nav.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .mobile-nav-link {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    min-height: 52px;
+
+    padding: 0 16px;
+
+    color: rgba(238, 238, 245, 0.7);
+
+    text-decoration: none;
+
+    font-family: "Manrope", sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.08em;
+
+    border-bottom:
+      1px solid
+      rgba(255, 255, 255, 0.05);
+
+    transition:
+      color 0.25s ease,
+      background 0.25s ease;
+  }
+
+  .mobile-nav-link:last-child {
+    border-bottom: none;
+  }
+
+  .mobile-nav-link:hover,
+  .mobile-nav-link.active {
+    color: #ff4db8;
+
+    background:
+      rgba(255, 20, 147, 0.045);
+  }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .mobile-menu-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .mobile-nav-link {
+    min-height: 50px;
+
+    font-size: 12px;
+  }
+
+}
+@media (max-width: 850px) {
+  .nav-cta {
+    display: none;
+  }
+}
