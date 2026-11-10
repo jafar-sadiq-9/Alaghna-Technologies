@@ -25,7 +25,7 @@ export default function Home() {
             loop
             playsInline
             preload="auto"
-            poster={`${import.meta.env.BASE_URL}hero-poster.png`}
+         
           >
 
             {/* Mobile version */}
