@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import "../styles/home.css";
 
@@ -24,19 +25,19 @@ export default function Home() {
             loop
             playsInline
             preload="auto"
-            poster="/hero-poster.png"
+            poster={`${import.meta.env.BASE_URL}hero-poster.png`}
           >
 
             {/* Mobile version */}
             <source
-              src="/videos/ama-hero-mobile.mp4"
+              src={`${import.meta.env.BASE_URL}videos/ama-hero-mobile.mp4`}
               media="(max-width: 768px)"
               type="video/mp4"
             />
 
             {/* Desktop version */}
             <source
-              src="/videos/ama-hero.mp4"
+              src={`${import.meta.env.BASE_URL}videos/ama-hero.mp4`}
               type="video/mp4"
             />
 
@@ -56,7 +57,6 @@ export default function Home() {
 
         {/* =================================================
             HERO CONTENT
-            NOW POSITIONED BELOW THE VIDEO
         ================================================= */}
 
         <div className="hero-copy">
@@ -180,10 +180,7 @@ export default function Home() {
 
         {/* =================================================
             HERO BOTTOM CAPTION
-            RIGHT SIDE LABELS REMOVED
         ================================================= */}
-
-      
 
 
         {/* =================================================
@@ -194,7 +191,7 @@ export default function Home() {
 
           <span className="hero-scroll-line" />
 
-          <span >
+          <span>
             SCROLL TO EXPLORE
           </span>
 
@@ -231,10 +228,9 @@ export default function Home() {
           </span>
 
           <h2>
-           <span className="hero-software">
+            <span className="hero-software">
               TECHNOLOGY
             </span>
-            
 
             <strong>
               BUILT WITH PURPOSE.
