@@ -1,5 +1,5 @@
+
 import {
-  BrowserRouter,
   Routes,
   Route,
 } from "react-router-dom";
@@ -10,7 +10,6 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
-
 
 function ComingSoon({ title }) {
   return (
@@ -35,7 +34,7 @@ function ComingSoon({ title }) {
             marginBottom: "18px",
           }}
         >
-          AMA SOFTWARE DEVELOPERS
+          ALAGHNA TECHNOLOGIES
         </p>
 
         <h1
@@ -62,30 +61,17 @@ function ComingSoon({ title }) {
 
 function App() {
   return (
-    <BrowserRouter>
-
+    <>
       <Navbar />
 
       <Routes>
-
-        <Route
-          path="/"
-          element={<Home />}
-        />
-
+        <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
-
         <Route path="/services" element={<Services />} />
-
         <Route path="/projects" element={<Projects />} />
-
-        
-
         <Route path="/contact" element={<Contact />} />
-
       </Routes>
-
-    </BrowserRouter>
+    </>
   );
 }
 
